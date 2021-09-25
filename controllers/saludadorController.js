@@ -2,7 +2,7 @@ var saludador = require('../models/saludador');
 
 saludo = (req, res) => {
   var nombre = req.query.nombre;
-  res.send('<h1>Hola ' + saludador.saludar(nombre) + '</h1>');
+  res.render('saludo', { mensaje: saludador.saludar(nombre) });
 }
 
 despedida = (req, res) => {

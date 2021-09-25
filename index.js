@@ -3,7 +3,7 @@ let exphbs = require('express-handlebars');
 const routes = require('./config/routes');
 let app = express();
 
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 const PORT = 8000;

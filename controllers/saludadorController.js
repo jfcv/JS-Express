@@ -7,7 +7,7 @@ saludo = (req, res) => {
 
 despedida = (req, res) => {
   var nombre = req.query.nombre;
-  res.send('<h1>Chau ' + saludador.saludar(nombre) + '</h1>');
+  res.render('despedida', { mensaje: saludador.saludar(nombre) });
 }
 
 module.exports = {

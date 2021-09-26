@@ -4,6 +4,19 @@ getUserId = (req, res) => {
     res.render('usuario_ver');
 }
 
+createUser = (req, res) => {
+    res.render('usuario_nuevo');
+}
+
+logUserInfo = (req, res) => {
+    if(req.body) {
+        console.log(req.body);
+        res.render('usuario_201');
+    }
+}
+
 module.exports = {
-    getUserId
+    getUserId,
+    createUser,
+    logUserInfo
 };

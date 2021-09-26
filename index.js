@@ -1,5 +1,7 @@
 let express = require('express');
 let exphbs = require('express-handlebars');
+let bodyParser = require('body-parser');
+
 const routes = require('./config/routes');
 let app = express();
 
@@ -24,6 +26,8 @@ function obtenerUsuario(req, res, next) {
 
 app.use(logMiddleware);
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
